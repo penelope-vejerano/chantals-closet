@@ -1,128 +1,126 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chantal's Closet | Buy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <title>Chantal's Closet | Buy</title>
+<body class="buy-page">
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="logo">chantal's closet</h1>
 
-  <body class="buy-page">
-    <!-- HEADER -->
-    <header class="header">
-      <h1 class="logo">chantal's closet</h1>
+    <nav class="nav-buttons">
+      <button onclick="location.href='owner.html'">owner</button>
+      <button onclick="location.href='clothes.html'">clothes</button>
+      <button onclick="location.href='home.html'">home</button>
+      <button onclick="location.href='buy.html'" class="buy-btn-header">buy</button>
+      <button onclick="location.href='account.html'" class="account-btn">account</button>
+    </nav>
+  </header>
 
-      <nav class="nav-buttons">
-        <button onclick="location.href = 'index.html'">owner</button>
+  <main class="buy-content">
 
-        <button onclick="location.href = 'clothes.html'">clothes</button>
+    <!-- INTRO -->
+    <section class="buy-intro">
+      <p class="small-heading">your little treasures ♡</p>
 
-        <button onclick="location.href = 'home.html'">home</button>
+      <h1>your basket</h1>
 
-        <button onclick="location.href = 'buy.html'" class="buy-btn-header">
-          buy
-        </button>
+      <p>
+        review your chosen pieces before bringing them home
+      </p>
+    </section>
 
-        <button onclick="location.href = 'account.html'" class="account-btn">
-          account
-        </button>
-      </nav>
-    </header>
+    <!-- CART -->
+    <section class="cart-section">
 
-    <!-- BUY PAGE -->
-    <main class="buy-content">
-      <section class="buy-intro">
-        <p class="small-heading">your little treasures ♡</p>
+      <h2>your picks</h2>
 
-        <h1>your basket</h1>
+      <div class="cart-item">
 
-        <p>review your chosen pieces before bringing them home</p>
-      </section>
+        <img src="assets/top1.jpg" alt="Pink floral top">
 
-      <!-- SHOPPING CART -->
-      <section class="cart-section">
-        <h2>your picks</h2>
-
-        <!-- ITEM 1 -->
-        <div class="cart-item">
-          <img src="../assets/top1.jpg" alt="Pink floral top" />
-
-          <div class="cart-item-info">
-            <h3>pink floral top</h3>
-
-            <p>size: medium</p>
-
-            <p class="cart-price">₱350</p>
-          </div>
-
-          <div class="quantity">
-            <button>-</button>
-
-            <span>1</span>
-
-            <button>+</button>
-          </div>
-
-          <p class="item-total">₱350</p>
+        <div class="cart-item-info">
+          <h3>pink floral top</h3>
+          <p>size: medium</p>
+          <p class="cart-price">₱350</p>
         </div>
 
-        <!-- ITEM 2 -->
-        <div class="cart-item">
-          <img src="../assets/bag1.jpg" alt="Pink shoulder bag" />
-
-          <div class="cart-item-info">
-            <h3>pink shoulder bag</h3>
-
-            <p>one size</p>
-
-            <p class="cart-price">₱600</p>
-          </div>
-
-          <div class="quantity">
-            <button>-</button>
-
-            <span>1</span>
-
-            <button>+</button>
-          </div>
-
-          <p class="item-total">₱600</p>
+        <div class="quantity">
+          <button>-</button>
+          <span>1</span>
+          <button>+</button>
         </div>
 
-        <!-- TOTAL -->
-        <div class="cart-summary">
-          <div class="summary-row">
-            <span>subtotal</span>
-            <span>₱950</span>
-          </div>
+        <p class="item-total">₱350</p>
 
-          <div class="summary-row">
-            <span>shipping</span>
-            <span>₱80</span>
-          </div>
+      </div>
 
-          <div class="summary-row total-row">
-            <span>total</span>
-            <span>₱1,030</span>
-          </div>
+      <div class="cart-item">
 
-          <button class="checkout-button">proceed to checkout ♡</button>
+        <img src="assets/bag1.jpg" alt="Pink shoulder bag">
+
+        <div class="cart-item-info">
+          <h3>pink shoulder bag</h3>
+          <p>one size</p>
+          <p class="cart-price">₱600</p>
         </div>
-      </section>
 
-      <!-- CONTINUE SHOPPING -->
-      <section class="continue-shopping">
-        <p>found something else you love?</p>
+        <div class="quantity">
+          <button>-</button>
+          <span>1</span>
+          <button>+</button>
+        </div>
 
-        <button
-          onclick="location.href = 'clothes.html'"
-          class="continue-button"
-        >
-          continue shopping
+        <p class="item-total">₱600</p>
+
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="cart-summary">
+
+        <div class="summary-row">
+          <span>subtotal</span>
+          <span>₱950</span>
+        </div>
+
+        <div class="summary-row">
+          <span>shipping</span>
+          <span>₱80</span>
+        </div>
+
+        <div class="summary-row total-row">
+          <span>total</span>
+          <span>₱1,030</span>
+        </div>
+
+        <button class="checkout-button">
+          proceed to checkout ♡
         </button>
-      </section>
-    </main>
-  </body>
+
+      </div>
+
+    </section>
+
+    <!-- CONTINUE SHOPPING -->
+    <section class="continue-shopping">
+
+      <p>found something else you love?</p>
+
+      <button
+        onclick="location.href='clothes.html'"
+        class="continue-button"
+      >
+        continue shopping
+      </button>
+
+    </section>
+
+  </main>
+
+</body>
 </html>

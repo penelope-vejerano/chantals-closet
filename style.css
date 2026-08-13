@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-image: url("../assets/homebg.jpg");
+  background-image: url("assets/homebg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -97,7 +97,7 @@ body {
 ================================ */
 
 .owner-intro {
-  padding-top: 40px;
+  padding-top: 45px;
 }
 
 .owner-intro h1 {
@@ -149,7 +149,7 @@ body {
 }
 
 /* ================================
-   GENERAL PAGE CONTENT
+   PAGE CONTENT
 ================================ */
 
 .clothes-content,
@@ -173,7 +173,7 @@ body {
 }
 
 /* ================================
-   CLOTHING CATEGORIES
+   CATEGORIES
 ================================ */
 
 .category-section {
@@ -258,7 +258,7 @@ body {
 }
 
 /* ================================
-   PRODUCT CATEGORIES
+   PRODUCTS
 ================================ */
 
 .product-category {
@@ -276,13 +276,9 @@ body {
   text-shadow: 2px 2px #5e2c04;
 }
 
-/* ================================
-   PRODUCT GRID
-================================ */
-
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   width: 100%;
 }
@@ -461,10 +457,6 @@ body {
   font-family: Garamond, serif;
   cursor: pointer;
 }
-
-/* ================================
-   NEW ARRIVALS
-================================ */
 
 .new-arrivals {
   background: rgba(255, 240, 245, 0.15);
@@ -772,7 +764,7 @@ body {
 }
 
 /* ================================
-   RESPONSIVE DESIGN
+   RESPONSIVE
 ================================ */
 
 @media (max-width: 900px) {
@@ -797,7 +789,10 @@ body {
     font-size: 65px;
   }
 
-  .product-grid,
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .showcase-grid {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -1,164 +1,137 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chantal's Closet | Home</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chantal's Closet | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<body class="home-page">
 
-  <body class="home-page">
-    <!-- HEADER -->
-    <header class="header">
-      <h1 class="logo">chantal's closet</h1>
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="logo">chantal's closet</h1>
 
-      <nav class="nav-buttons">
-        <button onclick="location.href = 'index.html'">owner</button>
-        <button onclick="location.href = 'clothes.html'">clothes</button>
-        <button onclick="location.href = 'home.html'">home</button>
-        <button onclick="location.href = 'buy.html'" class="buy-btn-header">
-          buy
-        </button>
-        <button onclick="location.href = 'account.html'" class="account-btn">
-          account
-        </button>
-      </nav>
-    </header>
+    <nav class="nav-buttons">
+      <button onclick="location.href='owner.html'">owner</button>
+      <button onclick="location.href='clothes.html'">clothes</button>
+      <button onclick="location.href='home.html'">home</button>
+      <button onclick="location.href='buy.html'" class="buy-btn-header">buy</button>
+      <button onclick="location.href='account.html'" class="account-btn">account</button>
+    </nav>
+  </header>
+
+  <main class="home-content">
 
     <!-- HERO -->
-    <main class="home-content">
-      <section class="hero-section">
-        <p class="small-heading">welcome to</p>
+    <section class="hero-section">
+      <p class="small-heading">welcome to our little corner ♡</p>
 
-        <h1>chantal's closet</h1>
+      <h1>chantal's closet</h1>
 
-        <p>whimsical thrifted treasures for your everyday wardrobe</p>
+      <p>
+        whimsical thrifted treasures for every little version of you
+      </p>
 
-        <button class="shop-button" onclick="location.href = 'clothes.html'">
-          explore the closet
-        </button>
-      </section>
+      <button
+        class="shop-button"
+        onclick="location.href='clothes.html'"
+      >
+        explore the closet
+      </button>
+    </section>
 
-      <!-- CLOTHING SHOWCASE -->
-      <section class="showcase-section">
-        <h2>little treasures</h2>
+    <!-- SHOWCASE -->
+    <section class="showcase-section">
 
-        <p class="section-description">
-          a peek at what you might find inside our closet
-        </p>
+      <h2>little treasures</h2>
 
-        <div class="showcase-grid">
-          <div class="showcase-card">
-            <img
-              src="../assets/home-top.jpg"
-              alt="Collection of thrifted tops"
-            />
+      <p class="section-description">
+        a little bit of everything for your dreamy wardrobe
+      </p>
 
-            <h3>tops</h3>
+      <div class="showcase-grid">
 
-            <p>soft, cute, and dreamy pieces</p>
-
-            <button onclick="location.href = 'clothes.html#tops'">
-              view tops
-            </button>
-          </div>
-
-          <div class="showcase-card">
-            <img
-              src="../assets/home-bottom.jpg"
-              alt="Collection of thrifted bottoms"
-            />
-
-            <h3>bottoms</h3>
-
-            <p>skirts, pants, and everything in between</p>
-
-            <button onclick="location.href = 'clothes.html#bottoms'">
-              view bottoms
-            </button>
-          </div>
-
-          <div class="showcase-card">
-            <img
-              src="../assets/home-bag.jpg"
-              alt="Collection of thrifted bags"
-            />
-
-            <h3>bags</h3>
-
-            <p>tiny treasures to carry everywhere</p>
-
-            <button onclick="location.href = 'clothes.html#bags'">
-              view bags
-            </button>
-          </div>
-
-          <div class="showcase-card">
-            <img
-              src="../assets/home-shoes.jpg"
-              alt="Collection of thrifted shoes"
-            />
-
-            <h3>shoes</h3>
-
-            <p>pretty pairs for every little adventure</p>
-
-            <button onclick="location.href = 'clothes.html#shoes'">
-              view shoes
-            </button>
-          </div>
+        <div class="showcase-card">
+          <img src="assets/top1.jpg" alt="Pink floral top">
+          <h3>tops</h3>
+          <p>sweet and dreamy pieces for every outfit.</p>
+          <button onclick="location.href='clothes.html#tops'">
+            explore tops
+          </button>
         </div>
-      </section>
 
-      <!-- NEW ARRIVALS -->
-      <section class="new-arrivals">
-        <p class="small-heading">just arrived ♡</p>
-
-        <h2>new arrivals</h2>
-
-        <p class="section-description">
-          fresh finds that just found their way into the closet
-        </p>
-
-        <div class="product-grid">
-          <div class="product-card">
-            <img src="../assets/new1.jpg" alt="Pink cardigan new arrival" />
-
-            <div class="product-info">
-              <h3>dreamy pink cardigan</h3>
-              <p class="price">₱500</p>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img src="../assets/new2.jpg" alt="Floral skirt new arrival" />
-
-            <div class="product-info">
-              <h3>floral midi skirt</h3>
-              <p class="price">₱550</p>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img src="../assets/new3.jpg" alt="Vintage handbag new arrival" />
-
-            <div class="product-info">
-              <h3>vintage mini handbag</h3>
-              <p class="price">₱650</p>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img src="../assets/new4.jpg" alt="Mary Jane shoes new arrival" />
-
-            <div class="product-info">
-              <h3>sweet mary janes</h3>
-              <p class="price">₱800</p>
-            </div>
-          </div>
+        <div class="showcase-card">
+          <img src="assets/bottom1.jpg" alt="Vintage denim skirt">
+          <h3>bottoms</h3>
+          <p>cute skirts and pants to complete your look.</p>
+          <button onclick="location.href='clothes.html#bottoms'">
+            explore bottoms
+          </button>
         </div>
-      </section>
-    </main>
-  </body>
+
+        <div class="showcase-card">
+          <img src="assets/bag1.jpg" alt="Pink shoulder bag">
+          <h3>bags</h3>
+          <p>tiny treasures to carry your little essentials.</p>
+          <button onclick="location.href='clothes.html#bags'">
+            explore bags
+          </button>
+        </div>
+
+        <div class="showcase-card">
+          <img src="assets/shoe1.jpg" alt="White Mary Jane shoes">
+          <h3>shoes</h3>
+          <p>pretty little pairs to finish every outfit.</p>
+          <button onclick="location.href='clothes.html#shoes'">
+            explore shoes
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NEW ARRIVALS -->
+    <section class="new-arrivals">
+
+      <h2>new arrivals ♡</h2>
+
+      <p class="section-description">
+        fresh finds that just arrived at chantal's closet
+      </p>
+
+      <div class="showcase-grid">
+
+        <div class="showcase-card">
+          <img src="assets/top3.jpg" alt="Ribbon blouse">
+          <h3>ribbon blouse</h3>
+          <p>₱450</p>
+        </div>
+
+        <div class="showcase-card">
+          <img src="assets/bottom3.jpg" alt="Classic wide leg pants">
+          <h3>wide leg pants</h3>
+          <p>₱550</p>
+        </div>
+
+        <div class="showcase-card">
+          <img src="assets/bag3.jpg" alt="Cream mini bag">
+          <h3>cream mini bag</h3>
+          <p>₱550</p>
+        </div>
+
+        <div class="showcase-card">
+          <img src="assets/shoe3.jpg" alt="Cream ballet flats">
+          <h3>cream ballet flats</h3>
+          <p>₱700</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
 </html>
