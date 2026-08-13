@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chantal's Closet | Account</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="account-page">
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="logo">chantal's closet</h1>
+
+      <nav class="nav-buttons">
+        <button onclick="location.href = 'index.html'">owner</button>
+        <button onclick="location.href = 'clothes.html'">clothes</button>
+        <button onclick="location.href = 'home.html'">home</button>
+        <button onclick="location.href = 'buy.html'" class="buy-btn-header">
+          buy
+        </button>
+        <button onclick="location.href = 'account.html'" class="account-btn">
+          account
+        </button>
+      </nav>
+    </header>
+
+    <!-- ACCOUNT -->
+    <main class="account-content">
+      <section class="account-box">
+        <p class="small-heading">welcome back ♡</p>
+
+        <h1>your account</h1>
+
+        <p>sign in to keep track of your favorite little finds</p>
+
+        <form>
+          <label for="email">email</label>
+          <input type="email" id="email" placeholder="your email" required />
+
+          <label for="password">password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="your password"
+            required
+          />
+
+          <button type="submit" class="sign-in-button">sign in</button>
+        </form>
+
+        <p class="account-help">
+          don't have an account?
+          <a href="#">create one</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
