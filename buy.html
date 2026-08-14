@@ -40,65 +40,32 @@
 
       <h2>your picks</h2>
 
-      <div class="cart-item">
-
-        <img src="assets/top1.jpg" alt="Pink floral top">
-
-        <div class="cart-item-info">
-          <h3>pink floral top</h3>
-          <p>size: medium</p>
-          <p class="cart-price">₱350</p>
-        </div>
-
-        <div class="quantity">
-          <button>-</button>
-          <span>1</span>
-          <button>+</button>
-        </div>
-
-        <p class="item-total">₱350</p>
-
+      <div class="empty-basket" id="emptyBasket">
+        <p>your basket is empty for now ♡</p>
+        <p>head to our closet and add something dreamy</p>
       </div>
 
-      <div class="cart-item">
-
-        <img src="assets/bag1.jpg" alt="Pink shoulder bag">
-
-        <div class="cart-item-info">
-          <h3>pink shoulder bag</h3>
-          <p>one size</p>
-          <p class="cart-price">₱600</p>
-        </div>
-
-        <div class="quantity">
-          <button>-</button>
-          <span>1</span>
-          <button>+</button>
-        </div>
-
-        <p class="item-total">₱600</p>
-
-      </div>
+      <div id="cartItems"></div>
 
       <!-- SUMMARY -->
-      <div class="cart-summary">
+      <div class="cart-summary" id="cartSummary" hidden>
 
         <div class="summary-row">
           <span>subtotal</span>
-          <span>₱950</span>
+          <span id="subtotalAmount">₱0</span>
         </div>
 
         <div class="summary-row">
           <span>shipping</span>
-          <span>₱80</span>
+          <span id="shippingAmount">₱80</span>
         </div>
 
         <div class="summary-row total-row">
           <span>total</span>
-          <span>₱1,030</span>
+          <span id="totalAmount">₱0</span>
         </div>
 
-        <button class="checkout-button">
+        <button class="checkout-button" type="button">
           proceed to checkout ♡
         </button>
 
@@ -121,6 +88,71 @@
     </section>
 
   </main>
+
+  <script src="basket.js"></script>
+  <script>
+    const SHIPPING_FEE = 80;
+
+    function renderBasket() {
+      const basket = getBasket();
+      const cartItems = document.getElementById("cartItems");
+      const emptyBasket = document.getElementById("emptyBasket");
+      const cartSummary = document.getElementById("cartSummary");
+
+      cartItems.innerHTML = "";
+
+      if (basket.length === 0) {
+        emptyBasket.hidden = false;
+        cartSummary.hidden = true;
+        return;
+      }
+
+      emptyBasket.hidden = true;
+      cartSummary.hidden = false;
+
+      let subtotal = 0;
+
+      basket.forEach(function(item) {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+
+        const cartItem = document.createElement("div");
+        cartItem.className = "cart-item";
+        cartItem.innerHTML =
+          '<img src="' + item.image + '" alt="' + item.name + '">' +
+          '<div class="cart-item-info">' +
+            '<h3>' + item.name + '</h3>' +
+            '<p class="cart-price">' + formatPrice(item.price) + '</p>' +
+          '</div>' +
+          '<div class="quantity">' +
+            '<button type="button" data-action="decrease" data-id="' + item.id + '">-</button>' +
+            '<span>' + item.quantity + '</span>' +
+            '<button type="button" data-action="increase" data-id="' + item.id + '">+</button>' +
+          '</div>' +
+          '<p class="item-total">' + formatPrice(itemTotal) + '</p>';
+
+        cartItems.appendChild(cartItem);
+      });
+
+      document.getElementById("subtotalAmount").textContent = formatPrice(subtotal);
+      document.getElementById("shippingAmount").textContent = formatPrice(SHIPPING_FEE);
+      document.getElementById("totalAmount").textContent = formatPrice(subtotal + SHIPPING_FEE);
+    }
+
+    document.getElementById("cartItems").addEventListener("click", function(event) {
+      const button = event.target.closest("button[data-action]");
+
+      if (!button) {
+        return;
+      }
+
+      const change = button.dataset.action === "increase" ? 1 : -1;
+      updateBasketQuantity(button.dataset.id, change);
+      renderBasket();
+    });
+
+    document.addEventListener("DOMContentLoaded", renderBasket);
+  </script>
 
 </body>
 </html>

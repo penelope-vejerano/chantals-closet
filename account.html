@@ -29,44 +29,109 @@
 
       <p class="small-heading">welcome back ♡</p>
 
-      <h1>your account</h1>
+      <h1 id="accountHeading">your account</h1>
 
-      <p>
+      <p id="accountSubtext">
         sign in to keep track of your little treasures and orders
       </p>
 
-      <form>
+      <p id="accountMessage" class="account-message"></p>
 
-        <label for="email">email</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="your email"
-          required
-        >
+      <div id="signInView">
+        <form id="signInForm">
 
-        <label for="password">password</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="your password"
-          required
-        >
+          <label for="signInEmail">email</label>
+          <input
+            type="email"
+            id="signInEmail"
+            placeholder="your email"
+            required
+          >
 
-        <button type="submit" class="sign-in-button">
-          sign in ♡
+          <label for="signInPassword">password</label>
+          <input
+            type="password"
+            id="signInPassword"
+            placeholder="your password"
+            required
+          >
+
+          <button type="submit" class="sign-in-button">
+            sign in ♡
+          </button>
+
+        </form>
+
+        <div class="account-help">
+          <p>don't have an account?</p>
+          <a href="#" id="showSignUpLink">create one</a>
+        </div>
+      </div>
+
+      <div id="signUpView" hidden>
+        <form id="signUpForm">
+
+          <label for="signUpName">name</label>
+          <input
+            type="text"
+            id="signUpName"
+            placeholder="your name"
+            required
+          >
+
+          <label for="signUpEmail">email</label>
+          <input
+            type="email"
+            id="signUpEmail"
+            placeholder="your email"
+            required
+          >
+
+          <label for="signUpPassword">password</label>
+          <input
+            type="password"
+            id="signUpPassword"
+            placeholder="create a password"
+            minlength="6"
+            required
+          >
+
+          <label for="signUpConfirmPassword">confirm password</label>
+          <input
+            type="password"
+            id="signUpConfirmPassword"
+            placeholder="confirm your password"
+            minlength="6"
+            required
+          >
+
+          <button type="submit" class="sign-in-button">
+            create account ♡
+          </button>
+
+        </form>
+
+        <div class="account-help">
+          <p>already have an account?</p>
+          <a href="#" id="showSignInLink">sign in</a>
+        </div>
+      </div>
+
+      <div id="loggedInView" hidden>
+        <p class="logged-in-text">
+          signed in as <strong id="loggedInEmail"></strong>
+        </p>
+
+        <button type="button" id="signOutButton" class="sign-in-button">
+          sign out
         </button>
-
-      </form>
-
-      <div class="account-help">
-        <p>don't have an account?</p>
-        <a href="#">create one</a>
       </div>
 
     </section>
 
   </main>
+
+  <script src="account.js"></script>
 
 </body>
 </html>

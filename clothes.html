@@ -9,6 +9,12 @@
 
 <body class="clothes-page">
 
+  <!-- IMAGE VIEWER -->
+  <div class="image-modal" id="imageModal">
+    <span class="image-modal-close" id="imageModalClose">×</span>
+    <img id="fullImage" src="" alt="Full product image">
+  </div>
+
   <!-- HEADER -->
   <header class="header">
     <h1 class="logo">chantal's closet</h1>
@@ -56,138 +62,31 @@
     <!-- TOPS -->
     <section class="product-category" id="tops">
       <h2>tops ♡</h2>
-
-      <div class="product-grid">
-
-        <div class="product-card">
-          <img src="assets/top1.jpg" alt="Pink floral top">
-          <div class="product-info">
-            <h3>pink floral top</h3>
-            <p class="price">₱350</p>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/top2.jpg" alt="Cream knit top">
-          <div class="product-info">
-            <h3>cream knit top</h3>
-            <p class="price">₱400</p>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/top3.jpg" alt="Ribbon blouse">
-          <div class="product-info">
-            <h3>ribbon blouse</h3>
-            <p class="price">₱450</p>
-          </div>
-        </div>
-
-      </div>
+      <div class="product-grid"></div>
     </section>
 
     <!-- BOTTOMS -->
     <section class="product-category" id="bottoms">
       <h2>bottoms ♡</h2>
-
-      <div class="product-grid">
-
-        <div class="product-card">
-          <img src="assets/bottom1.jpg" alt="Vintage denim skirt">
-          <div class="product-info">
-            <h3>vintage denim skirt</h3>
-            <p class="price">₱500</p>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/bottom2.jpg" alt="Brown pleated skirt">
-          <div class="product-info">
-            <h3>brown pleated skirt</h3>
-            <p class="price">₱450</p>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/bottom3.jpg" alt="Classic wide leg pants">
-          <div class="product-info">
-            <h3>classic wide leg pants</h3>
-            <p class="price">₱550</p>
-          </div>
-        </div>
-
-      </div>
+      <div class="product-grid"></div>
     </section>
 
     <!-- BAGS -->
     <section class="product-category" id="bags">
       <h2>bags ♡</h2>
-
-      <div class="product-grid">
-
-        <div class="product-card">
-          <img src="assets/bag1.jpg" alt="Small pink shoulder bag">
-          <div class="product-info">
-            <h3>pink shoulder bag</h3>
-            <p class="price">₱600</p>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/bag2.jpg" alt="Brown vintage handbag">
-          <div class="product-info">
-            <h3>vintage brown bag</h3>
-            <p class="price">₱650</p>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/bag3.jpg" alt="Cream mini bag">
-          <div class="product-info">
-            <h3>cream mini bag</h3>
-            <p class="price">₱550</p>
-          </div>
-        </div>
-
-      </div>
+      <div class="product-grid"></div>
     </section>
 
     <!-- SHOES -->
     <section class="product-category" id="shoes">
       <h2>shoes ♡</h2>
-
-      <div class="product-grid">
-
-        <div class="product-card">
-          <img src="assets/shoe1.jpg" alt="White Mary Jane shoes">
-          <div class="product-info">
-            <h3>white mary janes</h3>
-            <p class="price">₱750</p>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/shoe2.jpg" alt="Brown loafers">
-          <div class="product-info">
-            <h3>classic brown loafers</h3>
-            <p class="price">₱800</p>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/shoe3.jpg" alt="Cream ballet flats">
-          <div class="product-info">
-            <h3>cream ballet flats</h3>
-            <p class="price">₱700</p>
-          </div>
-        </div>
-
-      </div>
+      <div class="product-grid"></div>
     </section>
 
   </main>
 
-  <!-- SEARCH SCRIPT -->
+  <script src="products.js"></script>
+  <script src="basket.js"></script>
   <script>
     function searchProducts() {
       const searchInput = document.getElementById("searchInput");
@@ -200,7 +99,7 @@
           .textContent
           .toLowerCase();
 
-        if (productName.includes(searchValue)) {
+        if (searchValue === "" || productName.includes(searchValue)) {
           product.style.display = "block";
         } else {
           product.style.display = "none";
