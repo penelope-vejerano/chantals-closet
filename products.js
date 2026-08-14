@@ -105,7 +105,7 @@ tops: [
     "assets/vintagekittenheels.jpg",
     "assets/creamleatherloafers.jpg",
     "assets/suedeankleboots.jpg",
-    "assets/vintageplatformsandals.jpg",
+    "assets/vintageplatformsandals.png",
     "assets/brownleathersandals.jpg",
     "assets/bowdetailballetflats.jpg",
     "assets/vintageoxfordshoes.jpg",
