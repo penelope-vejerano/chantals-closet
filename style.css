@@ -51,7 +51,7 @@ body {
 .nav-buttons {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 18px;
 }
 
 .nav-buttons button {
@@ -60,7 +60,7 @@ body {
   color: white;
   font-family: Garamond, serif;
   font-size: 17px;
-  margin: 0 5px;
+  margin: 0;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -90,6 +90,141 @@ body {
 .account-btn:hover {
   background: #fff;
   color: #5e2c04 !important;
+}
+
+.header-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-nav ul,
+.footer-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 22px;
+}
+
+.site-nav a,
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  font-family: Garamond, serif;
+  font-size: 17px;
+  text-transform: lowercase;
+  transition: 0.3s;
+  padding: 0 4px;
+}
+
+.site-nav a:hover,
+.footer-nav a:hover {
+  color: #ff9d9d;
+}
+
+.site-footer {
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff0f5;
+  padding: 30px 20px 40px;
+  margin-top: 40px;
+}
+
+.site-footer p {
+  margin: 8px 0;
+  color: #fff0f5;
+  font-size: 18px;
+}
+
+.site-footer .small-heading {
+  color: #ffd8ef !important;
+}
+
+.footer-nav {
+  margin-top: 15px;
+}
+
+.footer-nav a {
+  font-size: 16px;
+}
+
+/* ================================
+   ABOUT & CONTACT PAGES
+================================ */
+
+.about-page .owner-intro h1,
+.contact-content h1 {
+  color: #ff9d9d;
+  text-shadow: 2px 2px #fff0f5;
+  font-size: 70px;
+  margin: 5px 0 15px;
+}
+
+.contact-content {
+  padding: 120px 20px 70px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-content .small-heading {
+  color: #ffd8ef;
+}
+
+.contact-intro {
+  color: #ffd8ef;
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 35px;
+}
+
+.contact-panel {
+  background: #fff0f5;
+  border: 3px solid #5c331b;
+  border-radius: 25px;
+  padding: 35px 40px;
+  box-shadow: 8px 8px 0px #2c0505;
+  text-align: left;
+}
+
+.contact-panel h2 {
+  color: #4c1553;
+  font-size: 38px;
+  margin-top: 0;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0 0;
+}
+
+.contact-list li {
+  color: #4c1553;
+  font-size: 20px;
+  line-height: 1.6;
+  padding: 12px 0;
+  border-bottom: 2px dashed #d9a5a5;
+}
+
+.contact-list li:last-child {
+  border-bottom: none;
+}
+
+.contact-list strong {
+  color: #5e2c04;
+  text-transform: lowercase;
+}
+
+.contact-list a {
+  color: #c45d7d;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
 }
 
 /* ================================
@@ -926,7 +1061,29 @@ body {
 
 @media (max-width: 900px) {
   .header {
-    padding: 0 20px;
+    height: auto;
+    min-height: 80px;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .header-nav-group {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .site-nav ul {
+    gap: 16px;
+  }
+
+  .nav-buttons {
+    gap: 14px;
+  }
+
+  .site-nav a {
+    font-size: 14px;
   }
 
   .logo {
@@ -939,7 +1096,7 @@ body {
 
   .nav-buttons button {
     font-size: 14px;
-    margin: 0 2px;
+    margin: 0;
   }
 
   .owner-intro h1 {
@@ -1000,6 +1157,16 @@ body {
     padding: 10px;
   }
 
+  .header-nav-group {
+    align-items: center;
+  }
+
+  .site-nav ul,
+  .footer-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .nav-buttons {
     flex-wrap: wrap;
     justify-content: center;
@@ -1007,8 +1174,9 @@ body {
 
   .owner-intro,
   .clothes-content,
-  .home-content {
-    padding-top: 140px;
+  .home-content,
+  .contact-content {
+    padding-top: 160px;
   }
 
   .owner-intro h1 {

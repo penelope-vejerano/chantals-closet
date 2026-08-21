@@ -19,13 +19,21 @@
   <header class="header">
     <h1 class="logo">chantal's closet</h1>
 
-    <nav class="nav-buttons">
-      <button onclick="location.href='index.html'">owner</button>
-      <button onclick="location.href='clothes.html'">clothes</button>
-      <button onclick="location.href='home.html'">home</button>
-      <button onclick="location.href='buy.html'" class="buy-btn-header">buy</button>
-      <button onclick="location.href='account.html'" class="account-btn">account</button>
-    </nav>
+    <div class="header-nav-group">
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="nav-buttons" aria-label="Shop">
+        <button onclick="location.href='clothes.html'">clothes</button>
+        <button onclick="location.href='buy.html'" class="buy-btn-header">buy</button>
+        <button onclick="location.href='account.html'" class="account-btn">account</button>
+      </nav>
+    </div>
   </header>
 
   <main class="home-content">
@@ -112,6 +120,19 @@
     </section>
 
   </main>
+
+  <footer class="site-footer">
+    <p class="small-heading">thank you for visiting ♡</p>
+    <p>chantal's closet — dreamy thrifted finds</p>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
 
   <script src="products.js"></script>
   <script src="basket.js"></script>

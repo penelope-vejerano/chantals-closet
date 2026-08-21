@@ -3,91 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chantal's Closet | Owner</title>
+  <title>Chantal's Closet | Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="owner-page">
+<body class="home-page">
+
+  <div class="image-modal" id="imageModal">
+    <span class="image-modal-close" id="imageModalClose">×</span>
+    <img id="fullImage" src="" alt="Full product image">
+  </div>
 
   <header class="header">
     <h1 class="logo">chantal's closet</h1>
 
-    <nav class="nav-buttons">
-      <button onclick="location.href='index.html'">owner</button>
-      <button onclick="location.href='clothes.html'">clothes</button>
-      <button onclick="location.href='home.html'">home</button>
-      <button onclick="location.href='buy.html'" class="buy-btn-header">buy</button>
-      <button onclick="location.href='account.html'" class="account-btn">account</button>
-    </nav>
+    <div class="header-nav-group">
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="nav-buttons" aria-label="Shop">
+        <button onclick="location.href='clothes.html'">clothes</button>
+        <button onclick="location.href='buy.html'" class="buy-btn-header">buy</button>
+        <button onclick="location.href='account.html'" class="account-btn">account</button>
+      </nav>
+    </div>
   </header>
 
-  <main class="owner-intro">
+  <main class="home-content">
 
-    <h1>chantal's closet</h1>
+    <section class="hero-section">
+      <p class="small-heading">welcome to our little corner ♡</p>
 
-    <p>
-      curated treasures, dreamy fits, and whimsical finds from tops to
-      bottoms, shoes, bags, and accessories
-    </p>
-
-    <div class="owner-section">
-
-      <h2>chantal</h2>
+      <h1>chantal's closet</h1>
 
       <p>
-        a fashion lover and curator who finds unique thrifted pieces and
-        gives them a new place to shine
+        whimsical thrifted treasures for every little version of you
       </p>
 
-      <p>
-        every piece in chantal's closet is handpicked with a little whimsy
-      </p>
-
-      <img
-        src="assets/me.jpg"
-        alt="Chantal, the owner and curator of Chantal's Closet"
+      <button
+        class="shop-button"
+        onclick="location.href='clothes.html'"
       >
+        explore the closet
+      </button>
+    </section>
 
-      <div class="contact-section">
+    <section class="showcase-section">
 
-        <h2>get in touch ♡</h2>
+      <h2>little treasures</h2>
 
-        <div class="contact-info">
+      <p class="section-description">
+        a little bit of everything for your dreamy wardrobe
+      </p>
 
-          <div class="contact-item">
-            <h3>• socials •</h3>
+      <div class="showcase-grid">
 
-            <p>
-              <strong>instagram:</strong>
-              <a href="https://www.instagram.com/vnelopen" target="_blank" rel="noopener noreferrer">vnelopen</a>
-            </p>
+        <div class="showcase-card">
+          <img src="assets/pinkfloral.jpg" alt="Pink floral top">
+          <h3>tops</h3>
+          <p>sweet and dreamy pieces for every outfit.</p>
+          <button onclick="location.href='clothes.html#tops'">
+            explore tops
+          </button>
+        </div>
 
-            <p>
-              <strong>facebook:</strong>
-              <a href="https://www.facebook.com/vnelopen" target="_blank" rel="noopener noreferrer">Penelope Vejerano</a>
-            </p>
-          </div>
+        <div class="showcase-card">
+          <img src="assets/vintagedenimskirt.jpg" alt="Vintage denim skirt">
+          <h3>bottoms</h3>
+          <p>cute skirts and pants to complete your look.</p>
+          <button onclick="location.href='clothes.html#bottoms'">
+            explore bottoms
+          </button>
+        </div>
 
-          <div class="contact-item">
-            <h3>• contact information •</h3>
+        <div class="showcase-card">
+          <img src="assets/pinkshoulderbag.jpg" alt="Pink shoulder bag">
+          <h3>bags</h3>
+          <p>tiny treasures to carry your little essentials.</p>
+          <button onclick="location.href='clothes.html#bags'">
+            explore bags
+          </button>
+        </div>
 
-            <p>
-              <strong>phone:</strong> +63 960 921 7506
-            </p>
-
-            <p>
-              <strong>email:</strong>
-              penelope.vejerano@tup.edu.ph
-            </p>
-          </div>
-
+        <div class="showcase-card">
+          <img src="assets/whitemaryjanes.jpg" alt="White Mary Jane shoes">
+          <h3>shoes</h3>
+          <p>pretty little pairs to finish every outfit.</p>
+          <button onclick="location.href='clothes.html#shoes'">
+            explore shoes
+          </button>
         </div>
 
       </div>
+    </section>
 
-    </div>
+    <section class="new-arrivals">
+
+      <h2>new arrivals ♡</h2>
+
+      <p class="section-description">
+        fresh finds that just arrived at chantal's closet
+      </p>
+
+      <div class="showcase-grid" id="newArrivalsGrid"></div>
+
+    </section>
 
   </main>
+
+  <footer class="site-footer">
+    <p class="small-heading">thank you for visiting ♡</p>
+    <p>chantal's closet — dreamy thrifted finds</p>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="basket.js"></script>
 
 </body>
 </html>
