@@ -228,6 +228,113 @@ body {
 }
 
 /* ================================
+   PRODUCT DETAIL PAGE
+================================ */
+
+.product-detail-content {
+  padding: 120px 20px 70px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.product-detail-content .small-heading {
+  color: #ffd8ef;
+}
+
+.product-detail-content h1 {
+  color: #ff9d9d;
+  text-shadow: 2px 2px #fff0f5;
+  font-size: 70px;
+  margin: 5px 0 35px;
+}
+
+.product-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  background: #fff0f5;
+  border: 3px solid #5c331b;
+  border-radius: 25px;
+  padding: 35px;
+  box-shadow: 8px 8px 0px #2c0505;
+  text-align: left;
+}
+
+.product-detail-image {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 3px solid #f5a0a0;
+  margin: 0;
+}
+
+.product-detail-description {
+  color: #4c1553;
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0 0 25px;
+}
+
+.product-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+.product-specs-table th,
+.product-specs-table td {
+  border: 2px solid #d9a5a5;
+  padding: 12px 16px;
+  font-size: 18px;
+}
+
+.product-specs-table th {
+  background: #ff9d9d;
+  color: white;
+  text-align: left;
+  text-transform: lowercase;
+  width: 35%;
+}
+
+.product-specs-table td {
+  background: white;
+  color: #4c1553;
+}
+
+.product-detail-button {
+  margin-top: 10px;
+}
+
+.product-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.product-detail-basket-btn {
+  font-size: 16px;
+  padding: 8px 16px;
+}
+
+.view-details-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #c45d7d;
+  font-family: Garamond, serif;
+  font-size: 17px;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.view-details-link:hover {
+  color: #ff9d9d;
+  text-decoration: underline;
+}
+
+/* ================================
    OWNER PAGE
 ================================ */
 
@@ -656,8 +763,16 @@ body {
 }
 
 .new-arrival-card .product-price-row {
-  padding: 10px 15px 15px;
+  padding: 10px 15px 0;
   margin-top: auto;
+}
+
+.new-arrival-card .view-details-link {
+  padding-bottom: 15px;
+}
+
+.product-info .view-details-link {
+  margin-top: 8px;
 }
 
 .new-arrival-card h3 {
@@ -1107,6 +1222,14 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .product-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .product-detail-content h1 {
+    font-size: 48px;
+  }
+
   .showcase-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1175,7 +1298,8 @@ body {
   .owner-intro,
   .clothes-content,
   .home-content,
-  .contact-content {
+  .contact-content,
+  .product-detail-content {
     padding-top: 160px;
   }
 

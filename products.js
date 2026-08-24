@@ -15,7 +15,7 @@ function buildProducts(names, images, basePrice, startingPrices) {
       id: slugify(name),
       name: name,
       price: price,
-      image: images[index % images.length]
+      image: images[index] || images[index % images.length]
     };
   });
 }
@@ -259,6 +259,12 @@ function createBasketButton(product) {
   );
 }
 
+function createDetailLink(product) {
+  return (
+    '<a class="view-details-link" href="products/' + product.id + '.html">View details</a>'
+  );
+}
+
 function createProductCard(product) {
   const card = document.createElement("div");
   card.className = "product-card";
@@ -271,6 +277,7 @@ function createProductCard(product) {
         '<p class="price">₱' + product.price + '</p>' +
         createBasketButton(product) +
       '</div>' +
+      createDetailLink(product) +
     '</div>';
 
   return card;

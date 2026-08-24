@@ -1,0 +1,133 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chantal's Closet | Brown Suede Shoulder Bag</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="product-detail-page">
+
+  <header class="header">
+    <h1 class="logo">chantal's closet</h1>
+
+    <div class="header-nav-group">
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="nav-buttons" aria-label="Shop">
+        <button onclick="location.href='../clothes.html'">clothes</button>
+        <button onclick="location.href='../buy.html'" class="buy-btn-header">buy</button>
+        <button onclick="location.href='../account.html'" class="account-btn">account</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="product-detail-content">
+
+    <p class="small-heading">a little treasure</p>
+
+    <h1>brown suede shoulder bag</h1>
+
+    <div class="product-detail-layout">
+
+      <img
+        class="product-detail-image"
+        src="../assets/brownsuedeshoulderbag.jpg"
+        alt="Brown Suede Shoulder Bag from Chantal's Closet"
+      >
+
+      <div class="product-detail-info">
+
+        <p class="product-detail-description">
+          this little bag is the kind of treasure that finishes an outfit and carries your daily essentials with style. the brown suede shoulder bag has been carefully selected for its quality, character, and whimsical details. each piece is one-of-a-kind, lightly loved, and ready for a new chapter in your wardrobe. style it with your favourite pieces from our closet or let it become the star of a simple, romantic outfit
+        </p>
+
+        <table class="product-specs-table">
+          <tr>
+            <th>material</th>
+            <td>vintage mixed materials</td>
+          </tr>
+          <tr>
+            <th>size</th>
+            <td>one size</td>
+          </tr>
+          <tr>
+            <th>colour</th>
+            <td>brown</td>
+          </tr>
+          <tr>
+            <th>price</th>
+            <td>&#8369;625</td>
+          </tr>
+        </table>
+
+        <div class="product-detail-actions">
+          <button
+            type="button"
+            class="add-to-basket-btn product-detail-basket-btn"
+            data-id="brown-suede-shoulder-bag"
+            data-name="brown suede shoulder bag"
+            data-price="625"
+            data-image="../assets/brownsuedeshoulderbag.jpg"
+          >add to basket</button>
+
+          <button
+            type="button"
+            class="shop-button product-detail-button"
+            onclick="location.href='../clothes.html#bags'"
+          >
+            back to bags
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="small-heading">thank you for visiting</p>
+    <p>chantal's closet, dreamy thrifted finds</p>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="../basket.js"></script>
+  <script>
+    document.querySelector(".product-detail-basket-btn").addEventListener("click", function() {
+      const button = this;
+
+      addToBasket({
+        id: button.dataset.id,
+        name: button.dataset.name,
+        price: Number(button.dataset.price),
+        image: button.dataset.image.replace("../", "")
+      });
+
+      const originalText = button.textContent;
+      button.textContent = "added";
+      button.disabled = true;
+
+      setTimeout(function() {
+        button.textContent = originalText;
+        button.disabled = false;
+      }, 1200);
+    });
+  </script>
+
+</body>
+</html>
