@@ -91,6 +91,107 @@
 
     </div>
 
+    <section class="order-enquiry-section">
+      <h2>order enquiry</h2>
+      <p class="order-enquiry-intro">ask about ordering the off-shoulder vintage blouse</p>
+
+      <form class="order-enquiry-form" action="#" method="post">
+
+        <input type="hidden" name="product" value="off-shoulder vintage blouse">
+
+        <label for="off-shoulder-vintage-blouse-quantity">quantity</label>
+        <input
+          type="number"
+          id="off-shoulder-vintage-blouse-quantity"
+          name="quantity"
+          min="1"
+          max="20"
+          value="1"
+          required
+        >
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>how would you like your order delivered?</legend>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="off-shoulder-vintage-blouse-delivery-standard"
+              name="delivery"
+              value="standard"
+              required
+            >
+            <label for="off-shoulder-vintage-blouse-delivery-standard">standard delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="off-shoulder-vintage-blouse-delivery-express"
+              name="delivery"
+              value="express"
+            >
+            <label for="off-shoulder-vintage-blouse-delivery-express">express delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="off-shoulder-vintage-blouse-delivery-pickup"
+              name="delivery"
+              value="pickup"
+            >
+            <label for="off-shoulder-vintage-blouse-delivery-pickup">local pickup</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>optional extras</legend>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="off-shoulder-vintage-blouse-extra-gift"
+              name="extras"
+              value="gift-wrapping"
+            >
+            <label for="off-shoulder-vintage-blouse-extra-gift">gift wrapping</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="off-shoulder-vintage-blouse-extra-express"
+              name="extras"
+              value="express-handling"
+            >
+            <label for="off-shoulder-vintage-blouse-extra-express">express handling</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="off-shoulder-vintage-blouse-extra-note"
+              name="extras"
+              value="personal-note"
+            >
+            <label for="off-shoulder-vintage-blouse-extra-note">personal note card</label>
+          </div>
+        </fieldset>
+
+        <label for="off-shoulder-vintage-blouse-email">contact email</label>
+        <input
+          type="email"
+          id="off-shoulder-vintage-blouse-email"
+          name="email"
+          placeholder="your email"
+          required
+        >
+
+        <button type="submit" class="order-enquiry-button">send order enquiry</button>
+
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer">

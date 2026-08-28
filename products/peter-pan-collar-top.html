@@ -91,6 +91,107 @@
 
     </div>
 
+    <section class="order-enquiry-section">
+      <h2>order enquiry</h2>
+      <p class="order-enquiry-intro">ask about ordering the peter pan collar top</p>
+
+      <form class="order-enquiry-form" action="#" method="post">
+
+        <input type="hidden" name="product" value="peter pan collar top">
+
+        <label for="peter-pan-collar-top-quantity">quantity</label>
+        <input
+          type="number"
+          id="peter-pan-collar-top-quantity"
+          name="quantity"
+          min="1"
+          max="20"
+          value="1"
+          required
+        >
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>how would you like your order delivered?</legend>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="peter-pan-collar-top-delivery-standard"
+              name="delivery"
+              value="standard"
+              required
+            >
+            <label for="peter-pan-collar-top-delivery-standard">standard delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="peter-pan-collar-top-delivery-express"
+              name="delivery"
+              value="express"
+            >
+            <label for="peter-pan-collar-top-delivery-express">express delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="peter-pan-collar-top-delivery-pickup"
+              name="delivery"
+              value="pickup"
+            >
+            <label for="peter-pan-collar-top-delivery-pickup">local pickup</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>optional extras</legend>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="peter-pan-collar-top-extra-gift"
+              name="extras"
+              value="gift-wrapping"
+            >
+            <label for="peter-pan-collar-top-extra-gift">gift wrapping</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="peter-pan-collar-top-extra-express"
+              name="extras"
+              value="express-handling"
+            >
+            <label for="peter-pan-collar-top-extra-express">express handling</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="peter-pan-collar-top-extra-note"
+              name="extras"
+              value="personal-note"
+            >
+            <label for="peter-pan-collar-top-extra-note">personal note card</label>
+          </div>
+        </fieldset>
+
+        <label for="peter-pan-collar-top-email">contact email</label>
+        <input
+          type="email"
+          id="peter-pan-collar-top-email"
+          name="email"
+          placeholder="your email"
+          required
+        >
+
+        <button type="submit" class="order-enquiry-button">send order enquiry</button>
+
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer">

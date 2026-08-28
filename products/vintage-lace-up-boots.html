@@ -91,6 +91,107 @@
 
     </div>
 
+    <section class="order-enquiry-section">
+      <h2>order enquiry</h2>
+      <p class="order-enquiry-intro">ask about ordering the vintage lace-up boots</p>
+
+      <form class="order-enquiry-form" action="#" method="post">
+
+        <input type="hidden" name="product" value="vintage lace-up boots">
+
+        <label for="vintage-lace-up-boots-quantity">quantity</label>
+        <input
+          type="number"
+          id="vintage-lace-up-boots-quantity"
+          name="quantity"
+          min="1"
+          max="20"
+          value="1"
+          required
+        >
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>how would you like your order delivered?</legend>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="vintage-lace-up-boots-delivery-standard"
+              name="delivery"
+              value="standard"
+              required
+            >
+            <label for="vintage-lace-up-boots-delivery-standard">standard delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="vintage-lace-up-boots-delivery-express"
+              name="delivery"
+              value="express"
+            >
+            <label for="vintage-lace-up-boots-delivery-express">express delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="vintage-lace-up-boots-delivery-pickup"
+              name="delivery"
+              value="pickup"
+            >
+            <label for="vintage-lace-up-boots-delivery-pickup">local pickup</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>optional extras</legend>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="vintage-lace-up-boots-extra-gift"
+              name="extras"
+              value="gift-wrapping"
+            >
+            <label for="vintage-lace-up-boots-extra-gift">gift wrapping</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="vintage-lace-up-boots-extra-express"
+              name="extras"
+              value="express-handling"
+            >
+            <label for="vintage-lace-up-boots-extra-express">express handling</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="vintage-lace-up-boots-extra-note"
+              name="extras"
+              value="personal-note"
+            >
+            <label for="vintage-lace-up-boots-extra-note">personal note card</label>
+          </div>
+        </fieldset>
+
+        <label for="vintage-lace-up-boots-email">contact email</label>
+        <input
+          type="email"
+          id="vintage-lace-up-boots-email"
+          name="email"
+          placeholder="your email"
+          required
+        >
+
+        <button type="submit" class="order-enquiry-button">send order enquiry</button>
+
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer">

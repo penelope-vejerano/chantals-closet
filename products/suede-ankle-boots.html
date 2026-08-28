@@ -91,6 +91,107 @@
 
     </div>
 
+    <section class="order-enquiry-section">
+      <h2>order enquiry</h2>
+      <p class="order-enquiry-intro">ask about ordering the suede ankle boots</p>
+
+      <form class="order-enquiry-form" action="#" method="post">
+
+        <input type="hidden" name="product" value="suede ankle boots">
+
+        <label for="suede-ankle-boots-quantity">quantity</label>
+        <input
+          type="number"
+          id="suede-ankle-boots-quantity"
+          name="quantity"
+          min="1"
+          max="20"
+          value="1"
+          required
+        >
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>how would you like your order delivered?</legend>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="suede-ankle-boots-delivery-standard"
+              name="delivery"
+              value="standard"
+              required
+            >
+            <label for="suede-ankle-boots-delivery-standard">standard delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="suede-ankle-boots-delivery-express"
+              name="delivery"
+              value="express"
+            >
+            <label for="suede-ankle-boots-delivery-express">express delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="suede-ankle-boots-delivery-pickup"
+              name="delivery"
+              value="pickup"
+            >
+            <label for="suede-ankle-boots-delivery-pickup">local pickup</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>optional extras</legend>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="suede-ankle-boots-extra-gift"
+              name="extras"
+              value="gift-wrapping"
+            >
+            <label for="suede-ankle-boots-extra-gift">gift wrapping</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="suede-ankle-boots-extra-express"
+              name="extras"
+              value="express-handling"
+            >
+            <label for="suede-ankle-boots-extra-express">express handling</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="suede-ankle-boots-extra-note"
+              name="extras"
+              value="personal-note"
+            >
+            <label for="suede-ankle-boots-extra-note">personal note card</label>
+          </div>
+        </fieldset>
+
+        <label for="suede-ankle-boots-email">contact email</label>
+        <input
+          type="email"
+          id="suede-ankle-boots-email"
+          name="email"
+          placeholder="your email"
+          required
+        >
+
+        <button type="submit" class="order-enquiry-button">send order enquiry</button>
+
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer">

@@ -91,6 +91,107 @@
 
     </div>
 
+    <section class="order-enquiry-section">
+      <h2>order enquiry</h2>
+      <p class="order-enquiry-intro">ask about ordering the retro canvas sneakers</p>
+
+      <form class="order-enquiry-form" action="#" method="post">
+
+        <input type="hidden" name="product" value="retro canvas sneakers">
+
+        <label for="retro-canvas-sneakers-quantity">quantity</label>
+        <input
+          type="number"
+          id="retro-canvas-sneakers-quantity"
+          name="quantity"
+          min="1"
+          max="20"
+          value="1"
+          required
+        >
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>how would you like your order delivered?</legend>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="retro-canvas-sneakers-delivery-standard"
+              name="delivery"
+              value="standard"
+              required
+            >
+            <label for="retro-canvas-sneakers-delivery-standard">standard delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="retro-canvas-sneakers-delivery-express"
+              name="delivery"
+              value="express"
+            >
+            <label for="retro-canvas-sneakers-delivery-express">express delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="retro-canvas-sneakers-delivery-pickup"
+              name="delivery"
+              value="pickup"
+            >
+            <label for="retro-canvas-sneakers-delivery-pickup">local pickup</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>optional extras</legend>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="retro-canvas-sneakers-extra-gift"
+              name="extras"
+              value="gift-wrapping"
+            >
+            <label for="retro-canvas-sneakers-extra-gift">gift wrapping</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="retro-canvas-sneakers-extra-express"
+              name="extras"
+              value="express-handling"
+            >
+            <label for="retro-canvas-sneakers-extra-express">express handling</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="retro-canvas-sneakers-extra-note"
+              name="extras"
+              value="personal-note"
+            >
+            <label for="retro-canvas-sneakers-extra-note">personal note card</label>
+          </div>
+        </fieldset>
+
+        <label for="retro-canvas-sneakers-email">contact email</label>
+        <input
+          type="email"
+          id="retro-canvas-sneakers-email"
+          name="email"
+          placeholder="your email"
+          required
+        >
+
+        <button type="submit" class="order-enquiry-button">send order enquiry</button>
+
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer">

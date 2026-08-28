@@ -91,6 +91,107 @@
 
     </div>
 
+    <section class="order-enquiry-section">
+      <h2>order enquiry</h2>
+      <p class="order-enquiry-intro">ask about ordering the floral button-up blouse</p>
+
+      <form class="order-enquiry-form" action="#" method="post">
+
+        <input type="hidden" name="product" value="floral button-up blouse">
+
+        <label for="floral-button-up-blouse-quantity">quantity</label>
+        <input
+          type="number"
+          id="floral-button-up-blouse-quantity"
+          name="quantity"
+          min="1"
+          max="20"
+          value="1"
+          required
+        >
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>how would you like your order delivered?</legend>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="floral-button-up-blouse-delivery-standard"
+              name="delivery"
+              value="standard"
+              required
+            >
+            <label for="floral-button-up-blouse-delivery-standard">standard delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="floral-button-up-blouse-delivery-express"
+              name="delivery"
+              value="express"
+            >
+            <label for="floral-button-up-blouse-delivery-express">express delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="floral-button-up-blouse-delivery-pickup"
+              name="delivery"
+              value="pickup"
+            >
+            <label for="floral-button-up-blouse-delivery-pickup">local pickup</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>optional extras</legend>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="floral-button-up-blouse-extra-gift"
+              name="extras"
+              value="gift-wrapping"
+            >
+            <label for="floral-button-up-blouse-extra-gift">gift wrapping</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="floral-button-up-blouse-extra-express"
+              name="extras"
+              value="express-handling"
+            >
+            <label for="floral-button-up-blouse-extra-express">express handling</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="floral-button-up-blouse-extra-note"
+              name="extras"
+              value="personal-note"
+            >
+            <label for="floral-button-up-blouse-extra-note">personal note card</label>
+          </div>
+        </fieldset>
+
+        <label for="floral-button-up-blouse-email">contact email</label>
+        <input
+          type="email"
+          id="floral-button-up-blouse-email"
+          name="email"
+          placeholder="your email"
+          required
+        >
+
+        <button type="submit" class="order-enquiry-button">send order enquiry</button>
+
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer">

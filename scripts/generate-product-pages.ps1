@@ -41,6 +41,113 @@ function Build-Products($names, $images, $basePrice, $startingPrices) {
     return $products
 }
 
+function Build-OrderEnquiryForm($productId, $productName) {
+    return @"
+
+    <section class="order-enquiry-section">
+      <h2>order enquiry</h2>
+      <p class="order-enquiry-intro">ask about ordering the $productName</p>
+
+      <form class="order-enquiry-form" action="#" method="post">
+
+        <input type="hidden" name="product" value="$productName">
+
+        <label for="$productId-quantity">quantity</label>
+        <input
+          type="number"
+          id="$productId-quantity"
+          name="quantity"
+          min="1"
+          max="20"
+          value="1"
+          required
+        >
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>how would you like your order delivered?</legend>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="$productId-delivery-standard"
+              name="delivery"
+              value="standard"
+              required
+            >
+            <label for="$productId-delivery-standard">standard delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="$productId-delivery-express"
+              name="delivery"
+              value="express"
+            >
+            <label for="$productId-delivery-express">express delivery</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="radio"
+              id="$productId-delivery-pickup"
+              name="delivery"
+              value="pickup"
+            >
+            <label for="$productId-delivery-pickup">local pickup</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="order-enquiry-fieldset">
+          <legend>optional extras</legend>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="$productId-extra-gift"
+              name="extras"
+              value="gift-wrapping"
+            >
+            <label for="$productId-extra-gift">gift wrapping</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="$productId-extra-express"
+              name="extras"
+              value="express-handling"
+            >
+            <label for="$productId-extra-express">express handling</label>
+          </div>
+
+          <div class="choice-option">
+            <input
+              type="checkbox"
+              id="$productId-extra-note"
+              name="extras"
+              value="personal-note"
+            >
+            <label for="$productId-extra-note">personal note card</label>
+          </div>
+        </fieldset>
+
+        <label for="$productId-email">contact email</label>
+        <input
+          type="email"
+          id="$productId-email"
+          name="email"
+          placeholder="your email"
+          required
+        >
+
+        <button type="submit" class="order-enquiry-button">send order enquiry</button>
+
+      </form>
+    </section>
+"@
+}
+
 function Build-PageHtml($product, $category, $material, $size) {
     $titleName = (Get-Culture).TextInfo.ToTitleCase($product.name)
     $colour = Get-ColourFromName $product.name
@@ -140,7 +247,7 @@ function Build-PageHtml($product, $category, $material, $size) {
       </div>
 
     </div>
-
+$(Build-OrderEnquiryForm $product.id $product.name)
   </main>
 
   <footer class="site-footer">
