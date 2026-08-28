@@ -40,9 +40,62 @@
       we would love to hear from you
     </p>
 
-    <section class="contact-panel">
+    <section class="contact-panel contact-form-panel">
 
-      <h2>get in touch</h2>
+      <h2>send us a message</h2>
+
+      <form class="contact-form" action="#" method="post">
+
+        <fieldset class="contact-fieldset">
+          <legend>your details</legend>
+
+          <label for="contact-name">name</label>
+          <input
+            type="text"
+            id="contact-name"
+            name="name"
+            placeholder="your name"
+            required
+          >
+
+          <label for="contact-email">email</label>
+          <input
+            type="email"
+            id="contact-email"
+            name="email"
+            placeholder="your email"
+            required
+          >
+
+          <label for="contact-subject">subject</label>
+          <select id="contact-subject" name="subject" required>
+            <option value="">choose a topic...</option>
+            <option value="product-question">product question</option>
+            <option value="order-status">order status</option>
+            <option value="wholesale-enquiry">wholesale enquiry</option>
+            <option value="something-else">something else</option>
+          </select>
+
+          <label for="contact-message">message</label>
+          <textarea
+            id="contact-message"
+            name="message"
+            rows="6"
+            placeholder="tell us what is on your mind..."
+            required
+          ></textarea>
+
+          <button type="submit" class="contact-submit-button">send message</button>
+
+        </fieldset>
+
+      </form>
+
+    </section>
+
+    <section class="contact-panel contact-info-panel">
+
+      <h2>other ways to reach us</h2>
 
       <ul class="contact-list">
         <li>
