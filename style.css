@@ -1,5 +1,19 @@
 /* ================================
-   GENERAL
+  VARIABLES
+================================ */
+
+:root {
+  --brand-color: #ff9d9d;
+  --ink-color: #5e2c04;
+  --muted-color: #777;
+  --light-background: #fff0f5;
+  --border-color: #5c331b;
+  --shadow-color: #2c0505;
+  --body-font: Garamond, serif;
+}
+
+/* ================================
+  BASE STYLES
 ================================ */
 
 * {
@@ -16,15 +30,16 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  color: #5e2c04;
-  font-family: Garamond, serif;
+  color: var(--ink-color);
+  font-family: var(--body-font);
+  line-height: 1.5;
   text-align: center;
   margin: 0;
   min-height: 100vh;
 }
 
 /* ================================
-   HEADER
+  LAYOUT REGIONS
 ================================ */
 
 .header {
@@ -58,7 +73,7 @@ body {
   background: none;
   border: none;
   color: white;
-  font-family: Garamond, serif;
+  font-family: var(--body-font);
   font-size: 17px;
   margin: 0;
   cursor: pointer;
@@ -66,15 +81,15 @@ body {
 }
 
 .nav-buttons button:hover {
-  color: #ff9d9d;
+  color: var(--brand-color);
   transform: translateY(-2px);
 }
 
 .buy-btn-header {
-  background: #ff9d9d !important;
+  background: var(--brand-color) !important;
   border-radius: 6px;
   padding: 8px 18px !important;
-  color: #5e2c04 !important;
+  color: var(--ink-color) !important;
 }
 
 .buy-btn-header:hover {
@@ -89,7 +104,7 @@ body {
 
 .account-btn:hover {
   background: #fff;
-  color: #5e2c04 !important;
+  color: var(--ink-color) !important;
 }
 
 .header-nav-group {
@@ -107,11 +122,16 @@ body {
   gap: 22px;
 }
 
+.site-nav li,
+.footer-nav li {
+  display: inline-block;
+}
+
 .site-nav a,
 .footer-nav a {
   color: white;
   text-decoration: none;
-  font-family: Garamond, serif;
+  font-family: var(--body-font);
   font-size: 17px;
   text-transform: lowercase;
   transition: 0.3s;
@@ -120,7 +140,7 @@ body {
 
 .site-nav a:hover,
 .footer-nav a:hover {
-  color: #ff9d9d;
+  color: var(--brand-color);
 }
 
 .site-footer {
@@ -665,13 +685,13 @@ body {
   border: none;
   outline: none;
   background: transparent;
-  font-family: Garamond, serif;
+  font-family: var(--body-font);
   font-size: 18px;
   color: #5e2c04;
 }
 
 .search-box input::placeholder {
-  color: #9b7272;
+  color: var(--muted-color);
 }
 
 .search-box button {
@@ -716,12 +736,16 @@ body {
   align-items: stretch;
 }
 
+/* ================================
+   COMPONENTS
+================================ */
+
 .product-card {
-  background: #fff0f5;
-  border: 3px solid #5c331b;
+  background: var(--light-background);
+  border: 3px solid var(--border-color);
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 5px 5px 0px #2c0505;
+  box-shadow: 5px 5px 0px var(--shadow-color);
   transition: 0.3s;
   display: flex;
   flex-direction: column;
@@ -730,7 +754,7 @@ body {
 
 .product-card:hover {
   transform: translateY(-6px);
-  box-shadow: 7px 8px 0px #2c0505;
+  box-shadow: 7px 8px 0px var(--shadow-color);
 }
 
 .product-card img {
@@ -779,7 +803,7 @@ body {
 
 .price {
   display: inline-block;
-  background: #ff9d9d;
+  background: var(--brand-color);
   color: white;
   font-size: 18px;
   font-weight: bold;
@@ -790,23 +814,23 @@ body {
 
 .add-to-basket-btn {
   background: transparent;
-  border: 2px solid #ff9d9d;
+  border: 2px solid var(--brand-color);
   border-radius: 15px;
   padding: 5px 12px;
   color: #c45d7d;
-  font-family: Garamond, serif;
+  font-family: var(--body-font);
   font-size: 15px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .add-to-basket-btn:hover {
-  background: #ff9d9d;
+  background: var(--brand-color);
   color: white;
 }
 
 .add-to-basket-btn:disabled {
-  background: #ff9d9d;
+  background: var(--brand-color);
   color: white;
   cursor: default;
 }
