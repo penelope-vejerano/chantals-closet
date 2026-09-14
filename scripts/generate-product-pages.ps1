@@ -166,24 +166,19 @@ function Build-PageHtml($product, $category, $material, $size) {
 
 <body class="product-detail-page">
 
-  <header class="header">
+  <header class="site-header">
     <h1 class="logo">chantal's closet</h1>
 
-    <div class="header-nav-group">
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <nav class="nav-buttons" aria-label="Shop">
-        <button onclick="location.href='../clothes.html'">clothes</button>
-        <button onclick="location.href='../buy.html'" class="buy-btn-header">buy</button>
-        <button onclick="location.href='../account.html'" class="account-btn">account</button>
-      </nav>
-    </div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../clothes.html">clothes</a></li>
+        <li><a href="../buy.html" class="buy-link">buy</a></li>
+        <li><a href="../account.html" class="account-link">account</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main class="product-detail-content">

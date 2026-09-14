@@ -45,12 +45,13 @@ body {
   LAYOUT REGIONS
 ================================ */
 
-.header {
+.header,
+.site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  min-height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,70 +65,26 @@ body {
   font-size: 30px;
   font-weight: 600;
   margin: 0;
+  flex-shrink: 0;
 }
 
-.nav-buttons {
+.site-header nav ul,
+.site-nav ul {
   display: flex;
   align-items: center;
-  gap: 18px;
-}
-
-.nav-buttons button {
-  background: none;
-  border: none;
-  color: white;
-  font-family: var(--body-font);
-  font-size: 17px;
+  gap: 20px;
+  list-style: none;
   margin: 0;
-  cursor: pointer;
-  transition: 0.3s;
+  padding: 0;
 }
 
-.nav-buttons button:hover {
-  color: var(--brand-color);
-  transform: translateY(-2px);
-}
-
-.buy-btn-header {
-  background: var(--brand-color) !important;
-  border-radius: 6px;
-  padding: 8px 18px !important;
-  color: var(--ink-color) !important;
-}
-
-.buy-btn-header:hover {
-  background: #ffc1c1 !important;
-}
-
-.account-btn {
-  border: 1px solid #fff !important;
-  border-radius: 6px;
-  padding: 7px 15px !important;
-}
-
-.account-btn:hover {
-  background: #fff;
-  color: var(--ink-color) !important;
-}
-
-.header-nav-group {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.site-nav ul,
 .footer-nav ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
   gap: 22px;
-}
-
-.site-nav li,
-.footer-nav li {
-  display: inline-block;
+  justify-content: center;
 }
 
 .site-nav a,
@@ -138,12 +95,34 @@ body {
   font-size: 17px;
   text-transform: lowercase;
   transition: 0.3s;
-  padding: 0 4px;
 }
 
 .site-nav a:hover,
 .footer-nav a:hover {
   color: var(--brand-color);
+}
+
+.site-nav a.buy-link {
+  background: var(--brand-color);
+  border-radius: 6px;
+  padding: 8px 18px;
+  color: var(--ink-color);
+}
+
+.site-nav a.buy-link:hover {
+  background: #ffc1c1;
+  color: var(--ink-color);
+}
+
+.site-nav a.account-link {
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 7px 15px;
+}
+
+.site-nav a.account-link:hover {
+  background: #fff;
+  color: var(--ink-color);
 }
 
 .site-footer {
@@ -854,12 +833,17 @@ body {
 .hero-section {
   width: 90%;
   max-width: 1000px;
+  min-height: 360px;
   margin: 30px auto 70px;
   background: rgba(255, 240, 245, 0.9);
   border: 3px solid #5c331b;
   border-radius: 30px;
   padding: 60px 30px;
   box-shadow: 8px 8px 0px #2c0505;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-section h1 {
@@ -1401,26 +1385,17 @@ body {
 ================================ */
 
 @media (max-width: 900px) {
+  .site-header,
   .header {
-    height: auto;
-    min-height: 80px;
     flex-wrap: wrap;
     padding: 10px 15px;
     gap: 10px;
   }
 
-  .header-nav-group {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 12px;
-  }
-
   .site-nav ul {
     gap: 16px;
-  }
-
-  .nav-buttons {
-    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   .site-nav a {
@@ -1429,15 +1404,6 @@ body {
 
   .logo {
     font-size: 23px;
-  }
-
-  .nav-buttons {
-    gap: 2px;
-  }
-
-  .nav-buttons button {
-    font-size: 14px;
-    margin: 0;
   }
 
   .owner-intro h1 {
@@ -1497,26 +1463,16 @@ body {
 }
 
 @media (max-width: 600px) {
+  .site-header,
   .header {
-    height: auto;
-    min-height: 70px;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    gap: 8px;
     padding: 10px;
-  }
-
-  .header-nav-group {
-    align-items: center;
   }
 
   .site-nav ul,
   .footer-nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-buttons {
     flex-wrap: wrap;
     justify-content: center;
   }
