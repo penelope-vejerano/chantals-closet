@@ -23,12 +23,21 @@
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
+img {
+  max-width: 100%;
+}
+
 body {
   background-image: url("assets/homebg.jpg");
+  overflow-wrap: break-word;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -45,24 +54,57 @@ body {
   LAYOUT REGIONS
 ================================ */
 
+/* Base layout is a single column. Named areas put the
+   sidebar after the products on a phone, then move it
+   beside the main content from 700px upward. */
+.page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "masthead"
+    "main"
+    "side"
+    "foot";
+  min-width: 0;
+}
+
+.page > .site-header,
+.page > .header {
+  grid-area: masthead;
+}
+
+.page > main {
+  grid-area: main;
+  min-width: 0;
+}
+
+.page > .site-sidebar {
+  grid-area: side;
+}
+
+.page > .site-footer {
+  grid-area: foot;
+}
+
 .header,
 .site-header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
-  min-height: 80px;
+  min-height: 70px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 0 50px;
+  gap: 8px;
+  padding: 10px 12px;
   background: rgba(0, 0, 0, 0.4);
   color: #fff;
   z-index: 1000;
 }
 
 .logo {
-  font-size: 30px;
+  font-size: 23px;
   font-weight: 600;
   margin: 0;
   flex-shrink: 0;
@@ -72,7 +114,9 @@ body {
 .site-nav ul {
   display: flex;
   align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -92,7 +136,7 @@ body {
   color: white;
   text-decoration: none;
   font-family: var(--body-font);
-  font-size: 17px;
+  font-size: 14px;
   text-transform: lowercase;
   transition: 0.3s;
 }
@@ -142,6 +186,53 @@ body {
   color: var(--light-text) !important;
 }
 
+.site-sidebar {
+  background: rgba(255, 240, 245, 0.92);
+  color: #4c1553;
+  margin: 8px 16px 24px;
+  padding: 18px;
+  border: 3px solid #5c331b;
+  border-radius: 20px;
+  box-shadow: 5px 5px 0 #2c0505;
+  text-align: left;
+  min-width: 0;
+}
+
+.site-sidebar h2 {
+  margin: 0 0 12px;
+  color: #4c1553;
+  font-size: 24px;
+  text-transform: lowercase;
+}
+
+.site-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.site-sidebar a {
+  color: #5e2c04;
+  text-decoration: none;
+  background: #fff;
+  border: 2px solid #5c331b;
+  border-radius: 14px;
+  padding: 6px 14px;
+}
+
+.site-sidebar a:hover {
+  background: #ff9d9d;
+}
+
+.site-sidebar p {
+  margin: 14px 0 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
 .footer-nav {
   margin-top: 15px;
 }
@@ -158,12 +249,12 @@ body {
 .contact-content h1 {
   color: #ff9d9d;
   text-shadow: 2px 2px #fff0f5;
-  font-size: 70px;
+  font-size: 42px;
   margin: 5px 0 15px;
 }
 
 .contact-content {
-  padding: 120px 20px 70px;
+  padding: 24px 16px 48px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -425,7 +516,7 @@ body {
 ================================ */
 
 .product-detail-content {
-  padding: 120px 20px 70px;
+  padding: 24px 16px 70px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -437,19 +528,19 @@ body {
 .product-detail-content h1 {
   color: #ff9d9d;
   text-shadow: 2px 2px #fff0f5;
-  font-size: 70px;
-  margin: 5px 0 35px;
+  font-size: 40px;
+  margin: 5px 0 24px;
 }
 
 .product-detail-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   align-items: start;
   background: #fff0f5;
   border: 3px solid #5c331b;
   border-radius: 25px;
-  padding: 35px;
+  padding: 18px;
   box-shadow: 8px 8px 0px #2c0505;
   text-align: left;
 }
@@ -532,14 +623,13 @@ body {
 ================================ */
 
 .owner-intro {
-  padding-top: 45px;
-  padding-bottom: 70px;
+  padding: 24px 16px 48px;
 }
 
 .owner-intro h1 {
   color: #ff9d9d;
   text-shadow: 2px 2px #fff0f5;
-  font-size: 100px;
+  font-size: clamp(2.2rem, 10vw, 100px);
   margin-bottom: 10px;
 }
 
@@ -576,8 +666,9 @@ body {
 }
 
 .owner-section img {
-  width: 300px;
-  height: 300px;
+  width: min(230px, 80%);
+  height: auto;
+  aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid #f5a0a0;
@@ -590,13 +681,13 @@ body {
 
 .clothes-content,
 .home-content {
-  padding-top: 120px;
+  padding-top: 24px;
   padding-bottom: 80px;
 }
 
 .page-title {
   color: #ff9d9d;
-  font-size: 65px;
+  font-size: clamp(2.2rem, 8vw, 65px);
   margin: 20px 0 5px;
   text-shadow: 2px 2px #fff0f5;
 }
@@ -614,6 +705,7 @@ body {
 
 .category-section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
   margin: 30px auto;
@@ -654,6 +746,7 @@ body {
 
 .search-box {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
 }
@@ -665,7 +758,8 @@ body {
 }
 
 .search-box input {
-  flex: 1;
+  flex: 1 1 140px;
+  min-width: 0;
   border: none;
   background: transparent;
   font-family: var(--body-font);
@@ -728,6 +822,8 @@ body {
 
 .product-card {
   flex: 1 1 240px;
+  min-width: 0;
+  max-width: 100%;
   background: var(--light-background);
   border: 3px solid var(--border-color);
   border-left: 6px solid var(--brand-color);
@@ -845,7 +941,7 @@ body {
 
 .hero-section h1 {
   color: #ff9d9d;
-  font-size: 75px;
+  font-size: clamp(2.2rem, 9vw, 75px);
   margin: 5px 0 10px;
   text-shadow: 2px 2px #fff;
 }
@@ -895,7 +991,7 @@ body {
 .showcase-section h2,
 .new-arrivals h2 {
   color: #fff0f5;
-  font-size: 48px;
+  font-size: 32px;
   margin-bottom: 5px;
   text-shadow: 2px 2px #5e2c04;
 }
@@ -908,7 +1004,7 @@ body {
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 25px;
   align-items: stretch;
 }
@@ -1008,22 +1104,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 120px 20px 50px;
+  padding: 24px 16px 50px;
 }
 
 .account-box {
   background: #fff0f5;
   border: 3px solid #5c331b;
   border-radius: 25px;
-  width: 90%;
+  width: 100%;
   max-width: 500px;
-  padding: 40px;
+  padding: 24px 16px;
   box-shadow: 8px 8px 0px #2c0505;
 }
 
 .account-box h1 {
   color: #ff9d9d;
-  font-size: 50px;
+  font-size: 36px;
   margin: 5px 0 10px;
 }
 
@@ -1118,7 +1214,7 @@ body {
 ================================ */
 
 .buy-content {
-  padding-top: 120px;
+  padding-top: 24px;
   padding-bottom: 80px;
 }
 
@@ -1135,7 +1231,7 @@ body {
 
 .buy-intro h1 {
   color: #ff9d9d;
-  font-size: 60px;
+  font-size: clamp(2rem, 8vw, 60px);
   margin: 5px 0 10px;
   text-shadow: 2px 2px #fff;
 }
@@ -1179,6 +1275,7 @@ body {
 
 .cart-item {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 20px;
   padding: 20px 0;
@@ -1186,8 +1283,8 @@ body {
 }
 
 .cart-item img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 15px;
   border: 3px solid #f5a0a0;
@@ -1195,7 +1292,8 @@ body {
 }
 
 .cart-item-info {
-  flex: 1;
+  flex: 1 1 160px;
+  min-width: 0;
 }
 
 .cart-item-info h3 {
@@ -1378,136 +1476,102 @@ body {
 }
 
 /* ================================
-   RESPONSIVE
+   RESPONSIVE — enhance upward
+   Base rules above are the phone layout.
 ================================ */
 
-@media (max-width: 900px) {
-  .site-header,
-  .header {
-    flex-wrap: wrap;
-    padding: 10px 15px;
-    gap: 10px;
+@media (min-width: 700px) {
+  .page {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+      "masthead masthead"
+      "side     main"
+      "foot     foot";
   }
 
-  .site-nav ul {
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  .site-sidebar {
+    margin: 24px 0 24px 16px;
+    align-self: start;
   }
 
-  .site-nav a {
-    font-size: 14px;
-  }
-
-  .logo {
-    font-size: 23px;
-  }
-
-  .owner-intro h1 {
-    font-size: 65px;
-  }
-
-  .product-detail-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .product-detail-content h1 {
-    font-size: 48px;
+  .site-sidebar ul {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .showcase-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-@media (max-width: 700px) {
-  .buy-content {
-    padding-top: 140px;
+  .showcase-section h2,
+  .new-arrivals h2 {
+    font-size: 42px;
   }
 
-  .buy-intro h1 {
-    font-size: 45px;
+  .contact-panel,
+  .account-box,
+  .product-detail-layout {
+    padding: 32px;
+  }
+
+  .account-box h1 {
+    font-size: 50px;
   }
 
   .cart-item {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .cart-item img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .cart-item-info {
-    min-width: calc(100% - 130px);
-  }
-
-  .quantity {
-    margin-left: 120px;
-  }
-
-  .item-total {
-    margin-left: auto;
-  }
-
-  .cart-summary {
-    width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .site-header,
-  .header {
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px;
-  }
-
-  .site-nav ul,
-  .footer-nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .owner-intro,
-  .clothes-content,
-  .home-content,
-  .contact-content,
-  .product-detail-content {
-    padding-top: 160px;
-  }
-
-  .owner-intro h1 {
-    font-size: 45px;
-  }
-
-  .page-title {
-    font-size: 45px;
-  }
-
-  .hero-section h1 {
-    font-size: 48px;
-  }
-
-  .category-section {
-    flex-wrap: wrap;
-  }
-
-  .showcase-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .product-card img {
-    height: 300px;
-  }
-
-  .owner-section {
-    width: 90%;
+    width: 120px;
+    height: 120px;
   }
 
   .owner-section img {
-    width: 230px;
-    height: 230px;
+    width: 300px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .site-header,
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    padding: 0 50px;
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .site-nav ul {
+    justify-content: flex-end;
+    gap: 20px;
+  }
+
+  .site-nav a {
+    font-size: 17px;
+  }
+
+  .product-detail-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 35px;
+  }
+
+  .product-detail-content h1 {
+    font-size: 70px;
+  }
+
+  .showcase-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .showcase-section h2,
+  .new-arrivals h2 {
+    font-size: 48px;
   }
 }

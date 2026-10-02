@@ -166,6 +166,8 @@ function Build-PageHtml($product, $category, $material, $size) {
 
 <body class="product-detail-page">
 
+  <div class="page">
+
   <header class="site-header">
     <h1 class="logo">chantal's closet</h1>
 
@@ -245,6 +247,17 @@ function Build-PageHtml($product, $category, $material, $size) {
 $(Build-OrderEnquiryForm $product.id $product.name)
   </main>
 
+  <aside class="site-sidebar" aria-label="Shop categories">
+    <h2>browse</h2>
+    <ul>
+      <li><a href="../clothes.html#tops">tops</a></li>
+      <li><a href="../clothes.html#bottoms">bottoms</a></li>
+      <li><a href="../clothes.html#bags">bags</a></li>
+      <li><a href="../clothes.html#shoes">shoes</a></li>
+    </ul>
+    <p>handpicked thrifted finds, ready for a new story.</p>
+  </aside>
+
   <footer class="site-footer">
     <p class="small-heading">thank you for visiting</p>
     <p>chantal's closet, dreamy thrifted finds</p>
@@ -257,6 +270,8 @@ $(Build-OrderEnquiryForm $product.id $product.name)
       </ul>
     </nav>
   </footer>
+
+  </div>
 
   <script src="../basket.js"></script>
   <script>
