@@ -863,6 +863,19 @@ body {
   flex-direction: column;
 }
 
+.product-stock {
+  margin: 0 0 8px;
+  color: var(--brand-text);
+  font-size: 16px;
+  font-style: italic;
+}
+
+.product-detail-content .product-stock {
+  color: var(--light-text);
+  font-size: 22px;
+  margin: 0 0 20px;
+}
+
 .product-info h3 {
   color: var(--heading-color);
   font-size: 21px;

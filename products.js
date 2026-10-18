@@ -15,6 +15,7 @@ function buildProducts(names, images, basePrice, startingPrices) {
       id: slugify(name),
       name: name,
       price: price,
+      stock: stockForName(name),
       image: images[index] || images[index % images.length]
     };
   });
@@ -249,13 +250,18 @@ const newArrivalNames = [
 ];
 
 function createBasketButton(product) {
+  const soldOut = product.stock === 0;
+  const disabled = soldOut === true ? " disabled" : "";
+  const label = soldOut === true ? "sold out" : "add to basket ♡";
+
   return (
     '<button type="button" class="add-to-basket-btn"' +
       ' data-id="' + product.id + '"' +
       ' data-name="' + product.name + '"' +
       ' data-price="' + product.price + '"' +
       ' data-image="' + product.image + '"' +
-    '>add to basket ♡</button>'
+      disabled +
+    '>' + label + '</button>'
   );
 }
 
@@ -273,6 +279,7 @@ function createProductCard(product) {
     '<img src="' + product.image + '" alt="' + product.name + '" class="zoomable-image">' +
     '<div class="product-info">' +
       '<h3>' + product.name + '</h3>' +
+      '<p class="product-stock">' + stockLabel(product.stock) + '</p>' +
       '<div class="product-price-row">' +
         '<p class="price">₱' + product.price + '</p>' +
         createBasketButton(product) +
@@ -290,6 +297,7 @@ function createNewArrivalCard(product) {
   card.innerHTML =
     '<img src="' + product.image + '" alt="' + product.name + '" class="zoomable-image">' +
     '<h3>' + product.name + '</h3>' +
+    '<p class="product-stock">' + stockLabel(product.stock) + '</p>' +
     '<div class="product-price-row">' +
       '<p class="price">₱' + product.price + '</p>' +
       createBasketButton(product) +

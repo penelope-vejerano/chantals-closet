@@ -189,6 +189,8 @@ function Build-PageHtml($product, $category, $material, $size) {
 
     <h1>$($product.name)</h1>
 
+    <p class="product-stock" data-product="$($product.name)"></p>
+
     <div class="product-detail-layout">
 
       <img
@@ -273,6 +275,7 @@ $(Build-OrderEnquiryForm $product.id $product.name)
 
   </div>
 
+  <script src="../script.js"></script>
   <script src="../basket.js"></script>
   <script>
     document.querySelector(".product-detail-basket-btn").addEventListener("click", function() {

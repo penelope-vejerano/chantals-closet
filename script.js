@@ -1,6 +1,31 @@
 "use strict";
 
-const stockCount = 4;
+function stockForName(name) {
+  let total = 0;
+  const letters = String(name).toLowerCase();
+
+  for (let index = 0; index < letters.length; index++) {
+    total = total + letters.charCodeAt(index);
+  }
+
+  return total % 16;
+}
+
+function getStockMessage(count) {
+  if (count > 10) {
+    return "In stock";
+  } else if (count >= 1 && count <= 10) {
+    return "Only a few left";
+  } else {
+    return "Sold out";
+  }
+}
+
+function stockLabel(count) {
+  return "stocks: " + count + " — " + getStockMessage(count);
+}
+
+const stockCount = stockForName("ribbon blouse");
 const orderTotal = 1500;
 const isMember = true;
 const isShopOpen = true;
@@ -37,3 +62,21 @@ if (deliveryTotalElement !== null) {
 if (shopHoursElement !== null) {
   shopHoursElement.textContent = shopStatus;
 }
+
+document.querySelectorAll(".product-stock").forEach(function(element) {
+  if (element.dataset.product === undefined) {
+    return;
+  }
+
+  const count = stockForName(element.dataset.product);
+  element.textContent = stockLabel(count);
+
+  if (count === 0) {
+    const button = element.parentElement.querySelector(".add-to-basket-btn");
+
+    if (button !== null) {
+      button.disabled = true;
+      button.textContent = "sold out";
+    }
+  }
+});
