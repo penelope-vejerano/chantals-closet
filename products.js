@@ -279,11 +279,11 @@ function createProductCard(product) {
     '<img src="' + product.image + '" alt="' + product.name + '" class="zoomable-image">' +
     '<div class="product-info">' +
       '<h3>' + product.name + '</h3>' +
-      '<p class="product-stock">' + stockLabel(product.stock) + '</p>' +
       '<div class="product-price-row">' +
         '<p class="price">₱' + product.price + '</p>' +
         createBasketButton(product) +
       '</div>' +
+      '<p class="product-stock">' + stockLabel(product.stock) + '</p>' +
       createDetailLink(product) +
     '</div>';
 

@@ -863,8 +863,8 @@ body {
   flex-direction: column;
 }
 
-.product-stock {
-  margin: 0 0 8px;
+.product-info .product-stock {
+  margin: 12px 0 0;
   color: var(--brand-text);
   font-size: 16px;
   font-style: italic;
@@ -1111,7 +1111,7 @@ body {
 }
 
 .product-info .view-details-link {
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .new-arrival-card h3 {
