@@ -939,6 +939,30 @@ body {
   align-items: center;
 }
 
+.shop-decisions {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  padding: 24px 18px;
+  background: rgba(255, 240, 245, 0.9);
+  border: 3px solid #5c331b;
+  border-radius: 25px;
+  box-shadow: 5px 5px 0px #2c0505;
+}
+
+.shop-decisions h2 {
+  margin: 0 0 12px;
+  color: #4c1553;
+  font-size: 32px;
+  text-transform: lowercase;
+}
+
+.shop-decisions p {
+  margin: 8px 0;
+  color: #5e2c04;
+  font-size: 20px;
+}
+
 .hero-section h1 {
   color: #ff9d9d;
   font-size: clamp(2.2rem, 9vw, 75px);
